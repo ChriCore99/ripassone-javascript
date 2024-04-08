@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <link rel="stylesheet" href="./style.css">
     <title>Document</title>
 </head>
@@ -16,6 +17,36 @@
 
     <div class="container">
         <div class="btn btn-counter">clicca qui</div>
+    </div>
+
+    <!-- ESERCIZI LATO VUE -->
+
+    <div id="app">                                                             <!-- inserisco la parte di vue dove andrà scritto il codice -->
+        <div>
+            {{messaggio}}                                                      <!-- nella doppia parentesi graffa dico cosa andrà stampato dai valori di VUE JS -->
+        </div>
+
+        <div>
+            {{numero}}                                                         <!-- nella doppia parentesi graffa dico cosa andrà stampato dai valori di VUE JS -->
+        </div>
+
+        <div v-for="arraySenior">                                              <!-- invoco con VUE l'equivalente di un ciclo for nell'array di parole -->
+            {{arraySenior[0]}}                                                 <!-- dico di stampare solo l'elemento con indice 0 che sarà "ciao mamma" -->
+        </div>
+
+        <div v-for="arraySenior">                                              <!-- invoco con VUE l'equivalente di un ciclo for nell'array di parole -->
+            {{arraySenior}}                                                    <!-- dico di stampare la rappresentazione di tuto il nostro array -->
+        </div>
+
+        <div v-for="arrayJunior in arraySenior">                               <!-- invoco con VUE l'equivalente di un ciclo for per prendere tutti gli elementi dell'array di parole -->
+            {{arrayJunior}}                                                    <!-- dico di stampare tuti i singoli elementi del nostro array in ordine -->
+        </div>
+
+        <div>
+            <input type="text" v-model="valoreInput">                          <!-- invoco con VUE l'equivalente del QuerySelector per recuperare il valore del nostro input -->
+            <button @click="aggiungiStringa()">Clicca</button>                 <!-- invoco con VUE l'equivalente dell'AddEventListener sul botone per eseguire la funzione indicata -->
+            <div>{{inputArray[0]}}</div>                                       <!-- dico di stampare il primo elemento dell'array chiamato "inputArray" -->
+        </div>
     </div>
 
     <script src="app.js"></script>

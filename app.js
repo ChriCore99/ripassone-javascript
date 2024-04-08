@@ -229,29 +229,29 @@
 
 // DATA UNA IPOTETICA STRINGA CHE SI RIPETE ALL'INFINITO, NE STAMPO SOLO UNA PARTE SPECIFICA TRA GLI INDICI 8 E 12 COMPRESI
 
-// const stringaInfinita = 'ABCDEABCDEABCDEABCDEABCDEABCDE';
+// const stringaInfinita = 'ABCDEABCDEABCDEABCDEABCDEABCDE';    // dichiaro una ipotetica stringa che si ripete in loop all'infinito
 
-// const indexMax = 12;
-// const indexMin = 8;
+// const indexMax = 12;                                         // dichiaro una costante per indicare un indice massimo pari a 12
+// const indexMin = 8;                                          // dichiaro una costante per indicare un indice minimo pari a 8
 
-// const lettereArray = [];
+// const lettereArray = [];                                     // dichiaro un array vuoto chiamato "lettereArray"
 
-// for (let i = indexMin; i <= indexMax; i++){
-//     const leteraCorrente = stringaInfinita[i];
-//     lettereArray.push(leteraCorrente)
+// for (let i = indexMin; i <= indexMax; i++){                  // creo un ciclo for per scorrere le lettere dal valore dell'indice minimo al valore dell'indice massimo
+//     const leteraCorrente = stringaInfinita[i];               // dichiaro una costante chiamata "letteraCorrente" che deve essere uguale a una lettera con un certo indice indicato
+//     lettereArray.push(leteraCorrente)                        // dico di mettere la letteraCorrente dentro l'array chiamato "letereArray"
 // }
 
-// console.log(lettereArray.join(''))
+// console.log(lettereArray.join(''))                           // dico di stampare gli elementi dentro l'array unendoli in una sola stringa senza spazi
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 // DA UN ARRAY DI NUMERI FILTRO E STAMPO SOLO I NUMERI PARI
 
-// const arrayNumeriSnack = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// const arrayNumeriSnack = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];               // dichiaro un array contenente numeri da 1 a 10
 
-// const numeriPari = arrayNumeriSnack.filter((num) => num % 2 === 0);
+// const numeriPari = arrayNumeriSnack.filter((num) => num % 2 === 0);     // creo una costante chiamata "numeriPari" e le dico di filtrare i numeri il cui modulo di 2 dia 0 come risultato fra quelli dentro l'array dichiarato prima
 
-// console.log(numeriPari);
+// console.log(numeriPari);                                                // dico di stampare la costante "numeriPari"
 
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -385,22 +385,22 @@
 
 // CREO UN ARRAY DI OGGETI E LI ORDINO IN BASE AL PREZZO CON LA PROPRIETÀ "TO SORT"
 
-// const paniniDelPaninaro = [                                                                                     // creo array di oggeti
+// const paniniDelPaninaro = [                                                                                   // creo array di oggeti
 //     {                                                        
 //         nome: 'cotto e fontina',
-//         ingredienti: 'prosciutto coto e fontina',                                                               // assegno all'oggetto certi parametri con certi valori
+//         ingredienti: 'prosciutto coto e fontina',                                                             // assegno all'oggetto certi parametri con certi valori
 //         prezzo: 2.50,
 //     },
 
 //     {
 //         nome: 'cotoleta',
-//         ingredienti: 'latuga pomodoro e cotoleta',                                                             // assegno all'oggetto certi parametri con certi valori
+//         ingredienti: 'latuga pomodoro e cotoleta',                                                            // assegno all'oggetto certi parametri con certi valori
 //         prezzo: 3.50,
 //     },
 
 //     {
 //         nome: 'bufala', 
-//         ingredienti: 'mozzarella pomodo basilico',                                                            // assegno all'oggetto certi parametri con certi valori
+//         ingredienti: 'mozzarella pomodo basilico',                                                           // assegno all'oggetto certi parametri con certi valori
 //         prezzo: 3.00,
 //     },
 
@@ -441,4 +441,31 @@
 
 // console.log(arrayInvertito);                       // stampo l'array 
 
-//---------------------------------------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------------------------------------- 
+
+// ESERCIZIO VUE
+
+const { createApp } = Vue                                                                // inserisco la strutura di base di VUE-JS
+
+createApp({                                                                              // inserisco la strutura di base di VUE-JS
+    data() {                                                                             // inserisco la strutura di base di VUE-JS
+        return {                                                                         // inserisco la strutura di base di VUE-JS dicendo cosa voglio avere come valore restituito
+            messaggio: 'ecco un messaggio',                                              // creo l'elemento "messaggio" e gli dò una stringa come valore
+            numero: 1,                                                                   // creo l'elemento "numero" e gli dò un numero come valore
+            arraySenior:['ciao mamma', 'ciao papà', 'ciao fratello', 'ciao sorella'],    // creo l'elemento "arraySenior" e gli dò un'array di stringhe come valore
+            valoreInput: '',                                                             // creo l'elemento "valoreInput" e gli dò una stringa vuota come valore di base
+            inputArray:[],                                                               // creo l'elemento "inputArray" e gli dò un'array vuoto come valore di base
+        }                                                                                // inserisco la strutura di base di VUE-JS
+    },                                                                                   // inserisco la strutura di base di VUE-JS
+
+    methods: {                                                                           // creo la sezione "methods"
+        aggiungiStringa(){                                                               // creo la funzione "aggiungiStringa"
+            this.inputArray.push(this.valoreInput)                                       // dico alla funzione di metere ciò che scrivo nell'input dentro l'array vuoto
+        }
+    },
+
+    mounted(){                                                                           // creo la sezione "mounted"
+        console.log(this.inputArray)                                                     // dico di stamparmi in console l'array chiamato "inputArray"
+    }
+
+}).mount('#app')                                                                         // inserisco la strutura di base di VUE-JS
